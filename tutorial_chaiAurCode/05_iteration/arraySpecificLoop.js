@@ -34,3 +34,8 @@ myNumber.forEach((num) => {
 
 console.log(newNums);
 
+const chainingValue = myNumber
+                        .map((num) => num * 10)
+                        .map((num) => num+1)
+
+console.log(chainingValue)
