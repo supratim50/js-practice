@@ -6,9 +6,10 @@
     <title>Document</title>
 </head>
 <body>
-    <button id="owl" style="padding: 10px 40px">OWL</button>
+    <div id="outerbox">
+       <button id="owl" style="padding: 10px 40px">OWL</button>.
+    </div>
 </body>
-
 <script>
     // This is not a good approach
     // -------------------------------
@@ -16,10 +17,16 @@
     //     alert("OWL");
     // }
 
-    
-    document.getElementById("owl").addEventListener('click', function() {
+    // Image Propogation is 'bublling' up,  inside to outside for default value
+    // if you true this it will going to the 'capturing' mode. this is outside to inside
+
+    document.getElementById("outerbox").addEventListener('click', ()=>{
+        console.log("Out")
+    }, false)
+
+    document.getElementById("owl").addEventListener('click', function(e) {
         alert("Owl Clicked!");
-        e.stopPropagation();
+        e.stopPropagation(); // if we do not want to bubling 
     }, false)
 </script>
 </html>
