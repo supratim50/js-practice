@@ -7,7 +7,10 @@
 </head>
 <body>
     <div id="outerbox">
-       <button id="owl" style="padding: 10px 40px">OWL</button>.
+        <form id="form">
+            <input type="text" id="textInput">
+            <button type="submit" id="owl" style="padding: 10px 40px">OWL</button>.
+        </form>
     </div>
 </body>
 <script>
@@ -28,5 +31,12 @@
         alert("Owl Clicked!");
         e.stopPropagation(); // if we do not want to bubling 
     }, false)
+
+    document.getElementById("form").addEventListener("submit", (e) => {
+        e.preventDefault();
+        console.log("Form Submit!")
+    })
+
+
 </script>
 </html>
