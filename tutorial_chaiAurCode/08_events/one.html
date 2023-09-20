@@ -11,6 +11,13 @@
             <input type="text" id="textInput">
             <button type="submit" id="owl" style="padding: 10px 40px">OWL</button>.
         </form>
+
+        <ul id="ulList">
+            <li><button>Button 1</button></li>
+            <li><button>Button 2</button></li>
+            <li><button>Button 3</button></li>
+            <li><button>Button 4</button></li>
+        </ul>
     </div>
 </body>
 <script>
@@ -23,19 +30,32 @@
     // Image Propogation is 'bublling' up,  inside to outside for default value
     // if you true this it will going to the 'capturing' mode. this is outside to inside
 
-    document.getElementById("outerbox").addEventListener('click', ()=>{
-        console.log("Out")
-    }, false)
+    // document.getElementById("outerbox").addEventListener('click', ()=>{
+    //     console.log("Out")
+    // }, false)
 
-    document.getElementById("owl").addEventListener('click', function(e) {
-        alert("Owl Clicked!");
-        e.stopPropagation(); // if we do not want to bubling 
-    }, false)
+    // document.getElementById("owl").addEventListener('click', function(e) {
+    //     alert("Owl Clicked!");
+    //     e.stopPropagation(); // if we do not want to bubling 
+    // }, false)
 
-    document.getElementById("form").addEventListener("submit", (e) => {
-        e.preventDefault();
-        console.log("Form Submit!")
-    })
+    // document.getElementById("form").addEventListener("submit", (e) => {
+    //     e.preventDefault();
+    //     console.log("Form Submit!")
+    // })
+
+    document.querySelector("#ulList").addEventListener('click', function(e) {
+        // e.stopPropagation()
+        console.log(e.target.parentNode);
+        console.log(e.target.tagName);
+        // Checking the tag name
+        if(e.target.tagName === 'BUTTON') {
+            const removableItem = e.target.parentNode;
+            removableItem.remove()
+        }
+        // old method but imp
+        // removableItem.parentNode.removeChild(removableItem);
+    }, false);
 
 
 </script>
