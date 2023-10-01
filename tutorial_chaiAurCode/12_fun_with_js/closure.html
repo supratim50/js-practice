@@ -5,25 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
-    <h1>Hello!</h1>
+<body style="background-color: #313131;">
+    <button id="orange">Orange</button>
+    <button id="green">Green</button>
 </body>
 <script>
-    function outer() {
-        let username = "hitesh"
-        function inner() {
-            let secret = "my123"
-            console.log("inner",username);
-        }
-        function innerTwo() {
-            console.log("innerTwo", username);
-            console.log(secret);
-        }
-        inner();
-        innerTwo();
+    // ===================
+    // Laxical Scope
+    // ===================
 
-    }
-    outer();
-    console.log("Too Outer: ", username);
+    // function outer() {
+    //     let username = "hitesh"
+    //     function inner() {
+    //         let secret = "my123"
+    //         console.log("inner",username);
+    //     }
+    //     function innerTwo() {
+    //         console.log("innerTwo", username);
+    //         console.log(secret);
+    //     }
+    //     inner();
+    //     innerTwo();
+
+    // }
+    // outer();
+    // console.log("Too Outer: ", username);
+
+    // ===================
+    // Closure
+    // ===================
+
+     function makeFunc() {
+        const name = "Mozilla";
+        function displayName() {
+            console.log(name);
+        }
+        return displayName;
+     }
+
+     const myFunc = makeFunc();  // it will return the displayName with laxical scope
+     myFunc();
+</script>
+<!-- Closure with project -->
+<script>
+
 </script>
 </html>
