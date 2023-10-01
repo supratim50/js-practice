@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello!</h1>
+</body>
+<script>
+    function outer() {
+        let username = "hitesh"
+        function inner() {
+            let secret = "my123"
+            console.log("inner",username);
+        }
+        function innerTwo() {
+            console.log("innerTwo", username);
+            console.log(secret);
+        }
+        inner();
+        innerTwo();
+
+    }
+    outer();
+    console.log("Too Outer: ", username);
+</script>
+</html>
