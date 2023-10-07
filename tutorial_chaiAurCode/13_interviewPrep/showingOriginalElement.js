@@ -1,3 +1,8 @@
+// =============================================
+// Print the real element of an array 
+// =============================================
+
+
 Array.prototype.extraProperty = "Hitesh"; // adding an extra property
 
 const myNewArray = [1,2,3,4];
