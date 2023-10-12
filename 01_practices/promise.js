@@ -48,3 +48,15 @@ promiseFour.then((user) => {
 }).catch(function(error) {
     console.log(error);
 })
+
+const promiseFive = new Promise((resolve, reject) => {
+    console.log("Resolve form promise five");
+    resolve()
+})
+
+
+const consumer = async () => {
+    const res = await promiseFive;
+}
+
+consumer()
